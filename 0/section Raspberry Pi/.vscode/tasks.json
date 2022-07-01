@@ -13,7 +13,8 @@
                 // "${fileDirname}/${fileBasenameNoExtension}",
                 "${workspaceFolder}/out/${fileBasenameNoExtension}",
                 "-I", // custom newn parameters to allow gcc to search for local #include
-                "."
+                ".",
+                "-pthread"
             ],
             "options": {
                 // "cwd": "${fileDirname}"

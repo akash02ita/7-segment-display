@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "initgpio.h": "c",
+        "my_gpio_assist.h": "c",
+        "unistd.h": "c"
+    }
+}
