@@ -92,7 +92,7 @@ void test_input_mode()
 void test_output_mode()
 {
     print_dashes("START test_output_mode");
-    printf("\nPlace the one LED light on breadboard. Ensure the anode(-) is connected with the resistor that connected to the negative (ground) line on the breadboard. \nWhen done hit enter: \n");
+    printf("\nPlace the one LED light on breadboard. Ensure the cathode(-) is connected with the resistor that connected to the negative (ground) line on the breadboard. \nWhen done hit enter: \n");
     while (getchar() != '\n');
     printf("Place the ground pin to the line where the negative(ground) line of the breadboard.\nWhen done hit enter: \n");
     while (getchar() != '\n');
@@ -106,7 +106,7 @@ void test_output_mode()
 
         // set to output mode
         Init_GPIO(pin_num, 1);
-        printf("Place the GPIO pin [%d], which is for [%s], to the line where the cathode(+) of LED is connected\nWhen done hit enter: \n", pin_num, pin_name);
+        printf("Place the GPIO pin [%d], which is for [%s], to the line where the anode(+) of LED is connected\nWhen done hit enter: \n", pin_num, pin_name);
         while (getchar() != '\n');
 
         printf("The test will bling LED for 5 times\n");
