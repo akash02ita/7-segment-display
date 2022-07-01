@@ -28,125 +28,41 @@ void initialize_gpio_pins()
 
 void output_digit(const int digit)
 {
-    switch(digit)
-    {
-        case 0:
-        {
-            write_pin(BAR_a_PIN_NUM, 1);
-            write_pin(BAR_b_PIN_NUM, 1);
-            write_pin(BAR_c_PIN_NUM, 1);
-            write_pin(BAR_d_PIN_NUM, 1);
-            write_pin(BAR_e_PIN_NUM, 1);
-            write_pin(BAR_f_PIN_NUM, 0);
-            write_pin(BAR_g_PIN_NUM, 1);
-            break;
-        }
-        case 1:
-        {
-            write_pin(BAR_a_PIN_NUM, 0);
-            write_pin(BAR_b_PIN_NUM, 0);
-            write_pin(BAR_c_PIN_NUM, 1);
-            write_pin(BAR_d_PIN_NUM, 1);
-            write_pin(BAR_e_PIN_NUM, 0);
-            write_pin(BAR_f_PIN_NUM, 0);
-            write_pin(BAR_g_PIN_NUM, 0);
-            break;
-        }
-        case 2:
-        {
-            write_pin(BAR_a_PIN_NUM, 0);
-            write_pin(BAR_b_PIN_NUM, 1);
-            write_pin(BAR_c_PIN_NUM, 1);
-            write_pin(BAR_d_PIN_NUM, 0);
-            write_pin(BAR_e_PIN_NUM, 1);
-            write_pin(BAR_f_PIN_NUM, 1);
-            write_pin(BAR_g_PIN_NUM, 1);
-            break;
-        }
-        case 3:
-        {
-            write_pin(BAR_a_PIN_NUM, 0);
-            write_pin(BAR_b_PIN_NUM, 0);
-            write_pin(BAR_c_PIN_NUM, 1);
-            write_pin(BAR_d_PIN_NUM, 1);
-            write_pin(BAR_e_PIN_NUM, 1);
-            write_pin(BAR_f_PIN_NUM, 1);
-            write_pin(BAR_g_PIN_NUM, 1);
-            break;
-        }
-        case 4:
-        {
-            write_pin(BAR_a_PIN_NUM, 1);
-            write_pin(BAR_b_PIN_NUM, 0);
-            write_pin(BAR_c_PIN_NUM, 1);
-            write_pin(BAR_d_PIN_NUM, 1);
-            write_pin(BAR_e_PIN_NUM, 0);
-            write_pin(BAR_f_PIN_NUM, 1);
-            write_pin(BAR_g_PIN_NUM, 0);
-            break;
-        }
-        case 5:
-        {
-            write_pin(BAR_a_PIN_NUM, 1);
-            write_pin(BAR_b_PIN_NUM, 0);
-            write_pin(BAR_c_PIN_NUM, 0);
-            write_pin(BAR_d_PIN_NUM, 1);
-            write_pin(BAR_e_PIN_NUM, 1);
-            write_pin(BAR_f_PIN_NUM, 1);
-            write_pin(BAR_g_PIN_NUM, 1);
-            break;
-        }
-        case 6:
-        {
-            write_pin(BAR_a_PIN_NUM, 1);
-            write_pin(BAR_b_PIN_NUM, 1);
-            write_pin(BAR_c_PIN_NUM, 0);
-            write_pin(BAR_d_PIN_NUM, 1);
-            write_pin(BAR_e_PIN_NUM, 1);
-            write_pin(BAR_f_PIN_NUM, 1);
-            write_pin(BAR_g_PIN_NUM, 1);
-            break;
-        }
-        case 7:
-        {
-            write_pin(BAR_a_PIN_NUM, 0);
-            write_pin(BAR_b_PIN_NUM, 0);
-            write_pin(BAR_c_PIN_NUM, 1);
-            write_pin(BAR_d_PIN_NUM, 1);
-            write_pin(BAR_e_PIN_NUM, 1);
-            write_pin(BAR_f_PIN_NUM, 0);
-            write_pin(BAR_g_PIN_NUM, 0);
-            break;
-        }
-        case 8:
-        {
-            write_pin(BAR_a_PIN_NUM, 1);
-            write_pin(BAR_b_PIN_NUM, 1);
-            write_pin(BAR_c_PIN_NUM, 1);
-            write_pin(BAR_d_PIN_NUM, 1);
-            write_pin(BAR_e_PIN_NUM, 1);
-            write_pin(BAR_f_PIN_NUM, 1);
-            write_pin(BAR_g_PIN_NUM, 1);
-            break;
-        }
-        case 9:
-        {
-            write_pin(BAR_a_PIN_NUM, 1);
-            write_pin(BAR_b_PIN_NUM, 0);
-            write_pin(BAR_c_PIN_NUM, 1);
-            write_pin(BAR_d_PIN_NUM, 1);
-            write_pin(BAR_e_PIN_NUM, 1);
-            write_pin(BAR_f_PIN_NUM, 1);
-            write_pin(BAR_g_PIN_NUM, 1);
-            break;
-        }
-        default:
-        {
-            printf("Error invalid digit %d\n", digit);
-            exit(-1);
-            break;
-        }
-    }
+    if (digit == 0 || digit == 4 || digit == 5 || digit == 6 || digit == 8 || digit == 9)
+        write_pin(BAR_a_PIN_NUM, 1);
+    else
+        write_pin(BAR_a_PIN_NUM, 0);
+
+    if (digit == 0 || digit == 2 || digit == 6 || digit == 8)
+        write_pin(BAR_b_PIN_NUM, 1);
+    else
+        write_pin(BAR_b_PIN_NUM, 0);
+
+    if (digit == 0 || digit == 1 || digit == 2 || digit == 3 || digit == 4 || digit == 7 || digit == 8 || digit == 9)
+        write_pin(BAR_c_PIN_NUM, 1);
+    else
+        write_pin(BAR_c_PIN_NUM, 0);
+
+    if (digit == 0 || digit == 1 || digit == 3 || digit == 4 || digit == 5 || digit == 6 || digit == 7 || digit == 8 || digit == 9)
+        write_pin(BAR_d_PIN_NUM, 1);
+    else
+        write_pin(BAR_d_PIN_NUM, 0);
+
+    if (digit == 0 || digit == 2 || digit == 3 || digit == 5 || digit == 6 || digit == 7 || digit == 8 || digit == 9)
+        write_pin(BAR_e_PIN_NUM, 1);
+    else
+        write_pin(BAR_e_PIN_NUM, 0);
+
+    if (digit == 2 || digit == 3 || digit == 4 || digit == 5 || digit == 6 || digit == 8 || digit == 9)
+        write_pin(BAR_f_PIN_NUM, 1);
+    else
+        write_pin(BAR_f_PIN_NUM, 0);
+
+    if (digit == 0 || digit == 2 || digit == 3 || digit == 5 || digit == 6 || digit == 8 || digit == 9)
+        write_pin(BAR_g_PIN_NUM, 1);
+    else
+        write_pin(BAR_g_PIN_NUM, 0);
+   
 }
 
 void turn_off()
