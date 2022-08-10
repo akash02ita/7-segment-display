@@ -1,4 +1,4 @@
-# project-idea-10
+# project-10
  digital logic mini-project
 
 * ## 0
